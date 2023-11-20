@@ -213,11 +213,5 @@ namespace BinaryEx
             data.WriteByte(value);
         }
 
-        public static void WriteCountLE<T>(this Stream data, Span<T> output) where T : unmanaged
-        {
-            Debug.Assert(data.CanWrite);
-            var bytes = MemoryMarshal.AsBytes(output);
-            data.Write(bytes);
-        }
     }
 }

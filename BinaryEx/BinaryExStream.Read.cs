@@ -226,11 +226,5 @@ namespace BinaryEx
             return scratch.ReadByte(0);
         }
 
-        public static int ReadCountLE<T>(this Stream data, Span<T> output) where T : unmanaged
-        {
-            Debug.Assert(data.CanRead);
-            var bytes = MemoryMarshal.AsBytes(output);
-            return data.Read(bytes);
-        }
     }
 }
